@@ -2,21 +2,22 @@
 
 {% block content %}
   <main>
-  {% if request.user.is_authenticated %}
-      <h4>welcome!</h4>
 
-  {% else %}
-      <h5>To make purchases you have to login first:</h5>
-    <a class="nav-link waves-effect" href="{% url 'account_login' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Login </span>
-  {% endif %}
     <div class="container">
+
 
       <!--Navbar-->
       <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
 
         <!-- Navbar brand -->
-        <span class="navbar-brand">Categories:</span>
+           {% if request.user.is_authenticated %}
+      <h4>welcome!</h4>
+
+       {% else %}
+
+          <a class="nav-link waves-effect " href="{% url 'account_login' %}">
+              <span class="clearfix d-none d-sm-inline-block left"><strong>Login</strong> </span>
+       {% endif %}
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicaExampleNav"
