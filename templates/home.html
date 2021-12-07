@@ -11,8 +11,9 @@
 
         <!-- Navbar brand -->
            {% if request.user.is_authenticated %}
-      <h4>welcome!</h4>
 
+         <a  href="{% url 'account_logout' %}">
+               <h4>Logout</h4>
        {% else %}
 
           <a href="{% url 'account_login' %}">
