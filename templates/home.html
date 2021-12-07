@@ -2,6 +2,14 @@
 
 {% block content %}
   <main>
+  {% if request.user.is_authenticated %}
+      <h4>welcome!</h4>
+
+  {% else %}
+      <h5>To make purchases you have to login first:</h5>
+    <a class="nav-link waves-effect" href="{% url 'account_login' %}">
+              <span class="clearfix d-none d-sm-inline-block"> Login </span>
+  {% endif %}
     <div class="container">
 
       <!--Navbar-->
@@ -11,13 +19,13 @@
         <span class="navbar-brand">Categories:</span>
 
         <!-- Collapse button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-          aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicaExampleNav"
+          aria-expanded="true" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Collapsible content -->
-        <div class="collapse navbar-collapse" id="basicExampleNav">
+        <div class="collapse navbar-collapse" id="basicaExampleNav">
 
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
@@ -136,6 +144,7 @@
 
     </div>
   </main>
+
 
 {% endblock content %}
 
